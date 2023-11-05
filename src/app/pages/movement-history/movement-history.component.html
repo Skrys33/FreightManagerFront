@@ -1,6 +1,6 @@
 
 <h3>Derniers mouvement envoyés</h3>
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Hordatage</th>
@@ -16,6 +16,13 @@
   <tbody>
     <tr *ngFor="let movement of movements;">
       <td>{{movement.movementDateTime}}</td>
+      <td>{{movement.typeMovement}}</td>
+      <td>{{movement.fromWarehouse.label}}</td>
+      <td>{{movement.toWarehouse.label}}</td>
+      <td>{{movement.goods.reference}}</td>
+      <td>{{movement.goods.quantity}}</td>
+      <td>{{movement.goods.weight}}</td>
+      <td>{{movement.customsStatus}}</td>
     </tr>
   </tbody>
 </table>

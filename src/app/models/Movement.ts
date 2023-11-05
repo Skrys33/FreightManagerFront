@@ -1,4 +1,5 @@
 import {Goods} from "./Goods";
+import {Warehouse} from "./Warehouse";
 
 export interface Movement {
   id: string;
@@ -8,9 +9,9 @@ export interface Movement {
   location: string;
   goods: Goods;
   customsStatus: string;
-  codeWarehouse: string;
-  labelWarehouse: string;
   referenceAuthorization: string;
   typeAuthorization: string;
   typeMovement: string;
+  fromWarehouse: Warehouse;
+  toWarehouse: Warehouse;
   }
