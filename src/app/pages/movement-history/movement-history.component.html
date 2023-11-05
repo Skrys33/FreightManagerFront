@@ -1,0 +1,21 @@
+
+<h3>Derniers mouvement envoyés</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Hordatage</th>
+      <th>Type</th>
+      <th>De</th>
+      <th>Vers</th>
+      <th>Reference</th>
+      <th>Quantité</th>
+      <th>Poids</th>
+      <th>Status douanier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movement of movements;">
+      <td>{{movement.movementDateTime}}</td>
+    </tr>
+  </tbody>
+</table>
