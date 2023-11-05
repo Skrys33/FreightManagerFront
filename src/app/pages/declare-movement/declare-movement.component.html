@@ -1,17 +1,17 @@
 <div>
-  <h1>Entrée</h1>
+  <h1>{{title}}</h1>
 </div>
 <form (ngSubmit)="onSubmit()">
   <div>
     <label for="warehouse">Magasin d'origine</label>
-    <select name="warehouse" id="warehouse" [(ngModel)]="movement.fromWarehouse.label">
+    <select name="warehouse" id="warehouse" [(ngModel)]="warehouseDestination.label">
       <option value="warehouseA">Entrepôt A</option>
       <option value="warehouseB">Entrepôt B</option>
       <option value="warehouseC">Entrepôt C</option>
       <option value="warehouseD">Entrepôt D</option>
     </select>
 
-    <input type="text" id="warehouseCode" name="warehouseCode" [(ngModel)]="movement.fromWarehouse.code"/>
+    <input type="text" id="warehouseCode" name="warehouseCode" [(ngModel)]="warehouseDestination.code"/>
 
 
     <label for="customsStatus">Status Douanier</label>
@@ -32,6 +32,18 @@
     </select>
 
     <input type="text" id="reference" name="reference" [(ngModel)]="movement.goods.reference"/>
+  </div>
+
+  <div *ngIf="movement.typeMovement == 'Out'">
+    <label for="typeAuthorization">Apurement</label>
+    <select name="type" id="typeAuthorization" [(ngModel)]="movement.typeAuthorization">
+      <option value="T1">T1</option>
+      <option value="T2">T2</option>
+      <option value="T3">T3</option>
+      <option value="T4">T4</option>
+    </select>
+
+    <input type="text" id="referenceAuthorization" name="referenceAuthorization" [(ngModel)]="movement.referenceAuthorization"/>
   </div>
 
   <div>
@@ -70,3 +82,9 @@
     <button class="btn btn-success" type="submit"> Envoyer</button>
   </div>
 </form>
+
+<div *ngIf="alertService.error$ | async as errorMessage" class="alert alert-warning alert-dismissible fade show" role="alert" >
+  {{ errorMessage }}
+  <button type="button" class="btn btn-close" data-dismiss="alert" aria-label="Close" (click)="alertService.clearError()">
+  </button>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MovementHistoryComponent} from "./pages/movement-history/movement-history.component";
-import {MovementInComponent} from "./pages/movement-in/movement-in.component";
+import {DeclareMovementComponent} from "./pages/declare-movement/declare-movement.component";
 
 export const appRouteList: Routes = [
   {
@@ -9,8 +9,8 @@ export const appRouteList: Routes = [
     component: MovementHistoryComponent
   },
   {
-    path: 'movementIn',
-    component: MovementInComponent
+    path: 'declareMovement/:type',
+    component: DeclareMovementComponent
   },
   {
     path: '**',
