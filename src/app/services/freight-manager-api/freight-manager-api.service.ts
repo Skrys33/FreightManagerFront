@@ -18,4 +18,9 @@ export class FreightManagerAPIService {
     const params = new HttpParams().set('limit', limit);
     return this.http.get<Movement[]>(this.apiUrl + 'latest', { params });
   }
+
+
+  addMovement(movement: Movement): Observable<any> {
+    return this.http.post(this.apiUrl + 'add', movement);
+  }
 }

@@ -1,4 +1,4 @@
-export interface Warehouse {
-  code: string;
-  label: string;
+export class Warehouse {
+  code: string | undefined;
+  label: string | undefined;
 }

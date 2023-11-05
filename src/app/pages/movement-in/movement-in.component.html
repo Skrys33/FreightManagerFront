@@ -1,0 +1,72 @@
+<div>
+  <h1>Entrée</h1>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="warehouse">Magasin d'origine</label>
+    <select name="warehouse" id="warehouse" [(ngModel)]="movement.fromWarehouse.label">
+      <option value="warehouseA">Entrepôt A</option>
+      <option value="warehouseB">Entrepôt B</option>
+      <option value="warehouseC">Entrepôt C</option>
+      <option value="warehouseD">Entrepôt D</option>
+    </select>
+
+    <input type="text" id="warehouseCode" name="warehouseCode" [(ngModel)]="movement.fromWarehouse.code"/>
+
+
+    <label for="customsStatus">Status Douanier</label>
+    <select name="customsStatus" id="customsStatus" [(ngModel)]="movement.customsStatus">
+      <option value="t1">T1</option>
+      <option value="t2">T2</option>
+      <option value="t3">T3</option>
+      <option value="t4">T4</option>
+    </select>
+  </div>
+  <div>
+    <label for="reference">Référence</label>
+    <select name="type" id="type" [(ngModel)]="movement.goods.referenceType">
+      <option value="AWB">AWB</option>
+      <option value="ODJ">ODJ</option>
+      <option value="CIB">CIB</option>
+      <option value="QOI">QOI</option>
+    </select>
+
+    <input type="text" id="reference" name="reference" [(ngModel)]="movement.goods.reference"/>
+  </div>
+
+  <div>
+    <label for="descritiption">Nature de la marchandise</label>
+    <input type="text" id="descritiption" name="descritiption" [(ngModel)]="movement.goods.description"/>
+  </div>
+
+  <div>
+    <label for="quantity">Quantité</label>
+    <input type="text" id="quantity" name="quantity" [(ngModel)]="movement.goods.quantity"/>
+
+
+    <label for="weight">Poids</label>
+    <input type="text" id="weight" name="weight" [(ngModel)]="movement.goods.weight"/>
+  </div>
+
+  <div>
+    <label for="quantityTotalReference">Quantité totale</label>
+    <input type="text" id="quantityTotalReference" name="quantityTotalReference" [(ngModel)]="movement.goods.quantityTotalReference"/>
+
+
+    <label for="weightTotalReference">Poids total</label>
+    <input type="text" id="weightTotalReference" name="weightTotalReference" [(ngModel)]="movement.goods.weightTotalReference"/>
+  </div>
+
+  <div>
+    <label for="movementDateTime">Date du mouvement</label>
+    <input
+      type="datetime-local"
+      id="movementDateTime"
+      name="movementDateTime" [(ngModel)]="movementDate"/>
+  </div>
+
+  <div>
+    <button class="btn btn-secondary">Annuler</button>
+    <button class="btn btn-success" type="submit"> Envoyer</button>
+  </div>
+</form>

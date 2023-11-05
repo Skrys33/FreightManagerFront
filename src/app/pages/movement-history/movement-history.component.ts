@@ -17,7 +17,6 @@ export class MovementHistoryComponent {
   loadLatestMovements() {
     this.freightManagerAPIService.getLatestMovements(50).subscribe(movements => {
       this.movements = movements;
-      console.log(this.movements);
     });
   }
 }

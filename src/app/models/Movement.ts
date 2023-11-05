@@ -1,17 +1,26 @@
 import {Goods} from "./Goods";
 import {Warehouse} from "./Warehouse";
 
-export interface Movement {
-  id: string;
-  creationDateTime: string;
-  creationUser: string;
-  movementDateTime: string;
-  location: string;
+export class Movement {
+  id: string | undefined;
+  creationDateTime: string | undefined;
+  creationUser: string | undefined;
+  movementDateTime: string | undefined;
+  location: string | undefined;
   goods: Goods;
-  customsStatus: string;
-  referenceAuthorization: string;
-  typeAuthorization: string;
-  typeMovement: string;
+  customsStatus: string | undefined;
+  referenceAuthorization: string | undefined;
+  typeAuthorization: string | undefined;
+  typeMovement: string | undefined;
   fromWarehouse: Warehouse;
   toWarehouse: Warehouse;
+  constructor() {
+    this.goods = new Goods();
+    this.fromWarehouse = new Warehouse();
+    this.toWarehouse = new Warehouse();
   }
+}
+export enum MovementType {
+  In = "In",
+  Out = "Out"
+}

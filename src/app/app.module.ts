@@ -6,20 +6,31 @@ import { MovementHistoryComponent } from './pages/movement-history/movement-hist
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { MovementInComponent } from './pages/movement-in/movement-in.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovementHistoryComponent
+    MovementHistoryComponent,
+    MovementInComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DatePipe],
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
 
