@@ -21,6 +21,10 @@ export class DeclareMovementComponent {
     this.movement = new Movement();
     this.movement.typeMovement = type;
 
+    this.warehouseDestination = new Warehouse()
+    this.warehouseDirection = "";
+    this.movementDate = new Date();
+
     switch (this.movement.typeMovement){
       case MovementType.In:
         this.title = "Entrée";
@@ -32,11 +36,17 @@ export class DeclareMovementComponent {
         break;
     }
   }
+  clear() {
+    if (this.movement.typeMovement){
+      this.setupComponent(this.movement.typeMovement);
+    }
+  }
+
   movement: Movement = new Movement();
   movementDate: Date | undefined;
   title: string = "";
   warehouseDirection: string = "";
-  warehouseDestination: Warehouse = new Warehouse();
+  warehouseDestination: Warehouse  = new Warehouse();
 
   onSubmit(){
 
@@ -71,6 +81,7 @@ export class DeclareMovementComponent {
       .subscribe(
         response => {
           console.log('Réponse de l\'API :', response);
+          this.clear();
         },
         (error) => {
           this.alertService.showError('Une erreur est survenue : ' + error.message);

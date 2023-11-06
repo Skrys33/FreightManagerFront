@@ -1,0 +1,52 @@
+#title {
+  padding: 0.5rem 5rem;
+  border-bottom: solid 3px #000;
+}
+
+#declareMovementContent {
+  border: solid 3px #000;
+  border-radius: 3px;
+  margin: 5rem 5rem 0 5rem;
+  height:100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#declareMovementForm {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 3rem;
+}
+
+#declareMovementForm div {
+  margin-top: 0.8rem;
+}
+
+.btn-drawn {
+  border: solid 2px #000;
+  border-radius: 1px;
+  box-shadow: 3px 3px 0px #000;
+}
+
+#declareMovementCancelBtn {
+  padding: 2px 4px;
+  font-size: 14px;
+  width: 5rem;
+  margin-right: 2rem;
+}
+
+#declareMovementBtnDiv {
+  padding: 1rem 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 1;
+  margin: 0 3rem 2rem 3rem;
+}
+
+#alert {
+  position: absolute;
+  width: 100%;
+}

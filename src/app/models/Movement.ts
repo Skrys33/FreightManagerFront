@@ -8,7 +8,7 @@ export class Movement {
   movementDateTime: string | undefined;
   location: string | undefined;
   goods: Goods;
-  customsStatus: string | undefined;
+  customsStatus: string | undefined = "";
   referenceAuthorization: string | undefined;
   typeAuthorization: string | undefined;
   typeMovement: string | undefined;

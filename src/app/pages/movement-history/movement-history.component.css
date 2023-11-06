@@ -1,0 +1,20 @@
+#historyMovementTitle {
+  margin-bottom: 1rem ;
+}
+
+#historyMovementContent {
+  border: solid 3px #000;
+  border-radius: 3px;
+  margin: 5rem 5rem 0 5rem;
+  padding: 2rem;
+  height:80%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  overflow: scroll;
+  display: block;
+  height: 70vh;
+}
