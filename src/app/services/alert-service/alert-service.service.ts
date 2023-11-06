@@ -5,15 +5,15 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class AlertService {
-  private errorSubject = new Subject<string>();
+  private alertSubject = new Subject<string>();
 
-  error$ = this.errorSubject.asObservable();
+  alert$ = this.alertSubject.asObservable();
 
-  showError(message: string) {
-    this.errorSubject.next(message);
+  showAlert(message: string) {
+    this.alertSubject.next(message);
   }
 
-  clearError() {
-    this.errorSubject.next("");
+  clearAlert() {
+    this.alertSubject.next("");
   }
 }

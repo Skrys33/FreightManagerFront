@@ -1,6 +1,6 @@
-<div *ngIf="alertService.error$ | async as errorMessage" id="alert" class="alert alert-warning alert-dismissible fade show" role="alert" >
-  {{ errorMessage }}
-  <button type="button" class="btn btn-close" data-dismiss="alert" aria-label="Close" (click)="alertService.clearError()">
+<div *ngIf="alertService.alert$ | async as alertMessage" id="alert" [ngClass]="alertClasses" role="alert" >
+  {{ alertMessage }}
+  <button type="button" class="btn btn-close" data-dismiss="alert" aria-label="Close" (click)="alertService.clearAlert()">
   </button>
 </div>
 <div id="declareMovementContent">

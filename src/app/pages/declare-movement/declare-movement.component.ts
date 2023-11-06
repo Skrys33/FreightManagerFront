@@ -42,6 +42,7 @@ export class DeclareMovementComponent {
     }
   }
 
+  alertClasses = "alert alert-warning alert-dismissible fade show"
   movement: Movement = new Movement();
   movementDate: Date | undefined;
   title: string = "";
@@ -80,11 +81,15 @@ export class DeclareMovementComponent {
     this.freightManagerAPIService.addMovement(this.movement)
       .subscribe(
         response => {
-          console.log('Réponse de l\'API :', response);
+          console.log('Réponse de l\'API :', response)
+          this.alertClasses = "alert alert-success alert-dismissible fade show";
+          this.alertService.showAlert('Mouvement déclaré !');
+
           this.clear();
         },
         (error) => {
-          this.alertService.showError('Une erreur est survenue : ' + error.message);
+          this.alertClasses = "alert alert-warning alert-dismissible fade show";
+          this.alertService.showAlert('Une erreur est survenue : ' + error.message);
         });
   }
 }

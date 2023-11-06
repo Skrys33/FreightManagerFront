@@ -5,10 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Reminders TODO 
 - Validators
-- Success alert
 - CSS
 - HistoryMovement format values
-- DeclareMovement cancel button
 
 ## Development server
 
