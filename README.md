@@ -6,7 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Reminders TODO 
 - Validators
 - CSS
-- HistoryMovement format values
 
 ## Development server
 

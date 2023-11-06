@@ -3,26 +3,24 @@
   <button type="button" class="btn btn-close" data-dismiss="alert" aria-label="Close" (click)="alertService.clearAlert()">
   </button>
 </div>
-<div id="declareMovementContent">
+<div id="declareMovementContent" >
   <div>
     <h2 id="title">{{title}}</h2>
   </div>
-  <form  id="declareMovementForm">
-    <div>
-      <label for="warehouse">Magasin d'origine</label>
-      <select name="warehouse" id="warehouse" [(ngModel)]="warehouseDestination.label">
+  <form  id="declareMovementForm" class="container">
+    <div class="row">
+      <label class="col-11 col-sm-2" for="warehouse">Magasin d'origine</label>
+      <select class="col-5 col-sm-1" name="warehouse" id="warehouse" [(ngModel)]="warehouseDestination.label">
         <option value="" disabled selected hidden>nom</option>
         <option value="warehouseA">Entrepôt A</option>
         <option value="warehouseB">Entrepôt B</option>
         <option value="warehouseC">Entrepôt C</option>
         <option value="warehouseD">Entrepôt D</option>
       </select>
+      <input class="col-5 col-sm-1" type="text" id="warehouseCode" name="warehouseCode" placeholder="code" [(ngModel)]="warehouseDestination.code"/>
 
-      <input type="text" id="warehouseCode" name="warehouseCode" placeholder="code" [(ngModel)]="warehouseDestination.code"/>
-
-
-      <label for="customsStatus">Status Douanier</label>
-      <select name="customsStatus" id="customsStatus" [(ngModel)]="movement.customsStatus">
+      <label class="col-11 col-sm-2" for="customsStatus">Status Douanier</label>
+      <select class="col-11 col-sm-1" name="customsStatus" id="customsStatus" [(ngModel)]="movement.customsStatus">
         <option value="" disabled selected hidden>T..</option>
         <option value="t1">T1</option>
         <option value="t2">T2</option>
@@ -30,22 +28,23 @@
         <option value="t4">T4</option>
       </select>
     </div>
-    <div>
-      <label for="reference">Référence</label>
-      <select name="type" id="type" [(ngModel)]="movement.goods.referenceType">
-        <option value="" disabled selected hidden>type</option>
-        <option value="AWB">AWB</option>
-        <option value="ODJ">ODJ</option>
-        <option value="CIB">CIB</option>
-        <option value="QOI">QOI</option>
-      </select>
 
-      <input type="text" id="reference" name="reference" placeholder="reference" [(ngModel)]="movement.goods.reference"/>
+    <div class="row">
+        <label class="col-11 col-sm-2" for="reference">Référence</label>
+        <select class="col-5 col-sm-1" name="type" id="type" [(ngModel)]="movement.goods.referenceType">
+          <option value="" disabled selected hidden>type</option>
+          <option value="AWB">AWB</option>
+          <option value="ODJ">ODJ</option>
+          <option value="CIB">CIB</option>
+          <option value="QOI">QOI</option>
+        </select>
+
+        <input class="col-5 col-sm-2" type="text" id="reference" name="reference" placeholder="reference" [(ngModel)]="movement.goods.reference"/>
     </div>
 
-    <div *ngIf="movement.typeMovement == 'Out'">
-      <label for="typeAuthorization">Apurement</label>
-      <select name="type" id="typeAuthorization" [(ngModel)]="movement.typeAuthorization">
+    <div class="row" *ngIf="movement.typeMovement == 'Out'">
+      <label class="col-11 col-sm-2" for="typeAuthorization">Apurement</label>
+      <select class="col-5 col-sm-1" name="type" id="typeAuthorization" [(ngModel)]="movement.typeAuthorization">
         <option value="" disabled selected hidden>type</option>
         <option value="T1">T1</option>
         <option value="T2">T2</option>
@@ -53,35 +52,33 @@
         <option value="T4">T4</option>
       </select>
 
-      <input type="text" id="referenceAuthorization" name="referenceAuthorization" placeholder="reference" [(ngModel)]="movement.referenceAuthorization"/>
+      <input class="col-5 col-sm-2" type="text" id="referenceAuthorization" name="referenceAuthorization" placeholder="reference" [(ngModel)]="movement.referenceAuthorization"/>
     </div>
 
-    <div>
-      <label for="descritiption">Nature de la marchandise</label>
-      <input type="text" id="descritiption" name="descritiption" placeholder="description" [(ngModel)]="movement.goods.description"/>
+    <div class="row">
+      <label class="col-11 col-sm-3" for="descritiption">Nature de la marchandise</label>
+      <input class="col-11 col-sm-8" type="text" id="descritiption" name="descritiption" placeholder="description" [(ngModel)]="movement.goods.description"/>
     </div>
 
-    <div>
-      <label for="quantity">Quantité</label>
-      <input type="number" min="1" step="1" id="quantity" name="quantity" [(ngModel)]="movement.goods.quantity"/>
+    <div class="row">
+      <label class="col-11 col-sm-2" for="quantity">Quantité</label>
+      <input class="col-11 col-sm-1" type="number" min="1" step="1" id="quantity" name="quantity" [(ngModel)]="movement.goods.quantity"/>
 
-
-      <label for="weight">Poids (kg)</label>
-      <input type="number" min="0" id="weight" name="weight" [(ngModel)]="movement.goods.weight"/>
+      <label class="col-11 col-sm-2" for="weight">Poids (kg)</label>
+      <input class="col-11 col-sm-1" type="number" min="0" id="weight" name="weight" [(ngModel)]="movement.goods.weight"/>
     </div>
 
-    <div>
-      <label for="quantityTotalReference">Quantité totale</label>
-      <input type="number" min="1" step="1" id="quantityTotalReference" name="quantityTotalReference" [(ngModel)]="movement.goods.quantityTotalReference"/>
+    <div class="row">
+      <label class="col-11 col-sm-2" for="quantityTotalReference">Quantité totale</label>
+      <input class="col-11 col-sm-1" type="number" min="1" step="1" id="quantityTotalReference" name="quantityTotalReference" [(ngModel)]="movement.goods.quantityTotalReference"/>
 
-
-      <label for="weightTotalReference">Poids total (kg)</label>
-      <input type="number" min="0" id="weightTotalReference" name="weightTotalReference" [(ngModel)]="movement.goods.weightTotalReference"/>
+      <label class="col-11 col-sm-2" for="weightTotalReference">Poids total (kg)</label>
+      <input class="col-11 col-sm-1" type="number" min="0" id="weightTotalReference" name="weightTotalReference" [(ngModel)]="movement.goods.weightTotalReference"/>
     </div>
 
-    <div>
-      <label for="movementDateTime">Date du mouvement</label>
-      <input
+    <div class="row">
+      <label class="col-11 col-sm-2" for="movementDateTime">Date du mouvement</label>
+      <input class="col-11 col-sm-2"
         type="datetime-local"
         id="movementDateTime"
         name="movementDateTime" [(ngModel)]="movementDate"/>

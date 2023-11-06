@@ -6,7 +6,7 @@
 #declareMovementContent {
   border: solid 3px #000;
   border-radius: 3px;
-  margin: 5rem 5rem 0 5rem;
+  margin: 8vh 15vw 0 15vw;
   height:100%;
 
   display: flex;
@@ -16,8 +16,7 @@
 #declareMovementForm {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 2rem 3rem;
+  padding: 1vh 3vw 0 3vw
 }
 
 #declareMovementForm div {
@@ -38,7 +37,6 @@
 }
 
 #declareMovementBtnDiv {
-  padding: 1rem 0;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -49,4 +47,13 @@
 #alert {
   position: absolute;
   width: 100%;
+}
+
+
+select {
+  height: 30px;
+}
+
+select, label, input {
+  margin: 0 1vw;
 }
