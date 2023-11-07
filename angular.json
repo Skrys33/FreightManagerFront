@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FreightManagerFront2": {
+    "FreightManagerFront": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/freight-manager-front2",
+            "outputPath": "dist/freight-manager-front",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "FreightManagerFront2:build:production"
+              "browserTarget": "FreightManagerFront:build:production"
             },
             "development": {
-              "browserTarget": "FreightManagerFront2:build:development"
+              "browserTarget": "FreightManagerFront:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FreightManagerFront2:build"
+            "browserTarget": "FreightManagerFront:build"
           }
         },
         "test": {
@@ -91,7 +91,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/index.esm.js"
+              "node_modules/bootstrap/dist/js/index.esm.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
             ]
           }
         }

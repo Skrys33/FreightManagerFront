@@ -1,10 +1,10 @@
 export class Goods {
   id: string | undefined;
-  referenceType: string | undefined = "";
-  reference: string | undefined;
-  quantity: number | undefined = 1;
-  weight: number | undefined = 0;
-  quantityTotalReference: number | undefined = 1;
-  weightTotalReference: number | undefined = 0;
-  description: string | undefined;
+  referenceType: string = "";
+  reference: string = "";
+  quantity: number = 1;
+  weight: number = 0;
+  quantityTotalReference: number = 1;
+  weightTotalReference: number = 0;
+  description: string = "";
 }

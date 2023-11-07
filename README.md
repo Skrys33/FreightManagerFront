@@ -1,11 +1,17 @@
-# FreightManagerFront2
+# FreightManagerFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
-
-## Reminders TODO 
+## Improvement ideas
+- Dark theme
+- Multi language
+- Table with pagination (Movement History Page)
+- More appropriate UX/UI
+- Selenium Test
+- User management
+- Movement Export (Movement History Page)
 - Validators
-- CSS
+- ...
 
 ## Development server
 
